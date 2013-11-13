@@ -1,2 +1,3 @@
 person-sort-lib
 ===============
+I decided I wanted to make my function sort person object by any of the four keys in any order, which was a lot more difficult than just chosing an order of priorty for the four keys. At first I thought of using javascript's array.sort() and putting equivalent entries from that sort into subarrays to be sorted again. I realized that flattening all those arrays afterwards would be difficult, so I decided it would be easier and cleaner to write my own sort function. I used the same thought process as javascript's array.sort(): I wrote a sort function that returns -1, 0, or 1 depending on the situation, only my function loops through all the keys passed in as sorting options and only returns 0 if all of those keys are equivalent.
