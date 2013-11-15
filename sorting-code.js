@@ -1,5 +1,5 @@
 /*
-/ sortPersonArray(array, options) : Sort person array by key or multiple keys.
+/ sortPersonArray(array, options) : Sort person array by key or multiple keys. Returns the sorted array.
 /
 / array : array of Person objects
 / options : object with keys by which to sort the array, and sorting style. Priority is determined by order. Ex : {
@@ -34,15 +34,21 @@
   var sortFunction = function (a, b, options) {
 		var optionsArray = new Array();
 		var looper = 0;
-		for (var key in options) {
-			optionsArray.push(key);
-		}
+		var newA;
+		var newB;
+                for (var key in options) {
+                        optionsArray.push(key);
+                }
 
-		if (typeof(a) == "string") {
-			newA = a.toLowerCase();
+                if (typeof(a) == "string") {
+                        newA = a.toLowerCase();
+                } else {
+			newA = a;
 		}
-		if (typeof(b) == "string") {
-			newB = b.toLowerCase();
+                if (typeof(b) == "string") {
+                        newB = b.toLowerCase();
+                } else {
+			newB = b;
 		}
 		while (looper < optionsArray.length)
 		{
